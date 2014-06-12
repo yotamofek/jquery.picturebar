@@ -20,7 +20,7 @@
         else {
             var canvas = null;
 
-            if ( src instanceof jQuery) {
+            if ( src instanceof jQuery ) {
                 src = src.get( 0 )
             }
 
@@ -68,7 +68,7 @@
                                 totalWidth = $this.width(),
                                 percentage = (x > 0 ? x : 0) / totalWidth * 100;
 
-                            percentage = ( percentage > 100 ) ? 100 : percentage;
+                            percentage = (percentage > 100) ? 100 : percentage;
 
                             if ( percentage != $this.picturebar( 'percentage' ) )
                             {
@@ -125,10 +125,7 @@
                     var selectedCanvas = $('<canvas/>', {
                             'class': 'picturebar-selected',
                         } )
-                        .attr( {
-                            'width': 0,
-                            'height': height,
-                        } )
+                        .attr( 'height', height )
                         .css( canvasCss )
                         .appendTo( $this );
 
@@ -177,8 +174,7 @@
         option : function( name, value ) {
 
             return $.access( this, function( elem, name, value ) {
-                var $this = $(elem),
-                    data = $this.data('picturebar');
+                var data = $(elem).data('picturebar');
 
                 if ( value !== undefined ) {
                     data[name] = value;
